@@ -1,119 +1,128 @@
 # Project Title
-
-Boilerplate para Ionic3
-## Todo
-- ApiClient with/without mocks
+Boilerplate para Ionic4 + Angular7 + Sass + Storybooks + Cypress.
 
 ## Project
 
-### Preconfig
+### Base configuration
 
 - [ ] [Angular](https://angular.io/)
 - [ ] [Ionic](https://ionicframework.com)
 - [ ] [Tslint](https://palantir.github.io/tslint/)
-- [ ] [Tslint airbnb config](https://www.npmjs.com/package/tslint-config-airbnb)
 - [ ] [Prettier](https://prettier.io/)
 - [ ] [Jasmine](https://jasmine.github.io/)
 - [ ] [Karma](https://karma-runner.github.io/latest/index.html)
-- [ ] [Phantom]
+- [ ] [Phantom](http://phantomjs.org/)
+- [ ] [ngx-translate](https://github.com/ngx-translate/core)
 - [ ] [Protractor](https://www.protractortest.org/)
 - [ ] [Storybooks](https://storybook.js.org/docs/guides/guide-angular/)
 - [ ] [Angular Material](https://material.angular.io/)
-- [ ] Mocks server: Como proyecto independiente dentro del repo
+- [ ] Mocks server: As an independent project with [Faker](https://github.com/marak/Faker.js/)
 - [ ] [Cypress](https://www.cypress.io/)
 - [ ] [Stylelint](https://stylelint.io/)
-- [ ] [Sass]
+- [ ] [Sass](https://sass-lang.com/)
 
-### Estructura
+### Structure
+#### Organization of the code
 
-### Multilanguage
+The code is structured in 5 folders within src:
+- app /: code of our application, business logic.
+- theme /: general styles of our application, we have to differentiate general styles and particular styles of each component
+- assets /: assets of the project, later in a CDN.
+- environments /: environment variables
+- shared /: we will have connection with api, common interfaces, common components, ui-components, ...
+    - ui-components /: library of visual components, if the project grows it can be separated into another project, ... Configured with [Storybooks](https://storybook.js.org/), we can have our own reference library :
+    `` `js
+    npm run storybook
+    `` `
 
-``
-ng serve --configuration=es
-``
+On the other hand, we have the system of mocks inside the server folder that is a completely separate project.
+
+#### Programming structure (src / app)
+
+The project is configured thinking of a modular structure, following a typical route tree, in this way a module will be a folder composed of the following files:
+- example.module.ts
+- example.page | component.ts
+- example.page | component.sass
+- example.page | component.html
+- example.page | component.spec.ts
+- components/
+- modules/
+
+It is important to know that within the components folder, only those components that belong to this module will be included, if it belonged in addition to this one, we would take it to the folder shared /components/.
+
+The modules folder, on the other hand, is the one that will contain all those sub-paths that start from this module, for example:
+If our module refers to "/users", within this module there may be another module that is user-detail and refer to the path "/users/user-example". Following this pattern we can grant the application a great readability, at least in the initial moments.
+
+#### Utilities
+The project is configured with [Tslint](https://palantir.github.io/tslint/), [Stylelint](https://stylelint.io/) and [Prettier](https://prettier.io/) so that we all have the same ways of creating code, also [husky](https://github.com/typicode/husky) has been included to check unit tests and linters before doing a push.
+
+#### Multilanguage
+This is configured [ngx-translate](https://github.com/ngx-translate/core).
+
+#### Unit Test && Integration Test
+Angular comes by default with [Jasmine](https://jasmine.github.io/), although it has been changed for configuration so that it does not load the [Karma] plugin (https://karma-runner.github.io/ latest / index.html) and carge [Phantom](http://phantomjs.org/) and appear all by console.
+
+#### Test e2e
+It has been configured [Cypress](https://www.cypress.io/) for its ease of use.
+
 ---
-
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
+### Requirements
 
-What things you need to install the software and how to install them
-
-- [ ] [Ionic: v4.12.0](https://ionicframework.com)
-- [ ] [AngularCLI](https://angular.io/guide/quickstart)
-- [ ] [Node: v8.15.1](https://nodejs.org/es/)
+- [ ] [Ionic](https://ionicframework.com)
+- [ ] [Angular](https://angular.io/guide/quickstart)
+- [ ] [Node](https://nodejs.org/es/)
 - [ ] Npm: v6.4.1
 
 ### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
 
 ```
 npm install
 ```
 
-Para correr la aplicación:
+To run the application:
 
 ```
 npm run start
 ```
 
-Podrás ver el resultado de la demo en [localhost:4200](http://localhost:4200)
+You can see the result of the demo in [localhost:4200](http://localhost:4200)
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
+### Running mocks server
+```js
+npm run mocks
 ```
-Give an example
-```
+You can see the result of the demo in [localhost:3000](http://localhost:3000)
 
-### And coding style tests
+### Running the tests
 
-Explain what these tests test and why
-
-```
-Give an example
+Units and integration tests:
+```js
+npm run test
 ```
 
-## Deployment
 
-Add additional notes about how to deploy this on a live system
+E2E:
+```js
+npm run cypress:open
+```
 
-## Built With
+### Deployment
 
-- [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-- [Maven](https://maven.apache.org/) - Dependency Management
-- [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+```js
+npm run build
+```
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
+---
 
 ## Authors
 
-- **Billie Thompson** - _Initial work_ - [PurpleBooth](https://github.com/PurpleBooth)
+- **Jesús Jávega**
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/jeiker26/app-front/contributors) who participated in this project.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc

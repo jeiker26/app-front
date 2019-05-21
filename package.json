@@ -11,7 +11,6 @@
     "test": "ng test",
     "lint": "ng lint",
     "stylelint": "stylelint \"src/**/*.scss\" --syntax scss",
-    "e2e": "ng e2e",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "mocks": "cd server && npm run start",
