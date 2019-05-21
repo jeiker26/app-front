@@ -2,8 +2,7 @@
 
 Boilerplate para Ionic3
 ## Todo
-- Unit test with Phantom
-
+- ApiClient with/without mocks
 
 ## Project
 
