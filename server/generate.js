@@ -1,16 +1,24 @@
 var faker = require("faker");
 
-var database = { guides: [] };
+var database = { users: [] };
 
-for (var i = 1; i <= 300; i++) {
-  database.guides.push({
+for (var i = 1; i <= 30; i++) {
+  database.users.push({
     id: i,
     name: faker.name.firstName() + " " + faker.name.lastName(),
+    username: faker.name.firstName(),
     email: faker.internet.email(),
     phone: faker.phone.phoneNumber(),
-    city: faker.address.city(),
-    country: faker.address.country(),
-    title: faker.name.title()
+    address: {
+      street: faker.address.streetName(),
+      city: faker.address.city(),
+      country: faker.address.country(),
+      zipcode: faker.address.zipCode(),
+      geo: {
+        lat: faker.address.latitude(),
+        lng: faker.address.longitude()
+      }
+    }
   });
 }
 
