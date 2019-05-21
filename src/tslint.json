@@ -2,6 +2,10 @@
   "extends": "tslint-config-airbnb",
   "rules": {
     "directive-selector": [true, "attribute", "app", "camelCase"],
-    "component-selector": [true, "element", "app", "page", "kebab-case"]
+    "component-selector": [true, "element", "app", "page", "kebab-case"],
+    "max-line-length": [true, {"limit": 120, "ignore-pattern": "^import |^export {(.*?)}"}],
+    "one-variable-per-declaration": false,
+    "no-increment-decrement": false,
+    "prefer-array-literal": false
   }
 }

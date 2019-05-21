@@ -1,13 +1,13 @@
-import { storiesOf } from '@storybook/angular'
-import { action } from '@storybook/addon-actions'
-import { linkTo } from '@storybook/addon-links'
+import { storiesOf } from '@storybook/angular';
+import { action } from '@storybook/addon-actions';
+import { linkTo } from '@storybook/addon-links';
 
-import { Welcome, Button } from '@storybook/angular/demo'
+import { Welcome, Button } from '@storybook/angular/demo';
 
 storiesOf('Welcome', module).add('to Storybook', () => ({
   component: Welcome,
   props: {},
-}))
+}));
 
 storiesOf('Button', module)
   .add('with text', () => ({
@@ -24,7 +24,7 @@ storiesOf('Button', module)
         text: '😀 😎 👍 💯',
       },
     }),
-    { notes: 'My notes on a button with emojis' }
+    { notes: 'My notes on a button with emojis' },
   )
   .add(
     'with some emoji and action',
@@ -35,8 +35,8 @@ storiesOf('Button', module)
         onClick: action('This was clicked OMG'),
       },
     }),
-    { notes: 'My notes on a button with emojis' }
-  )
+    { notes: 'My notes on a button with emojis' },
+  );
 
 storiesOf('Another Button', module).add(
   'button with link to another story',
@@ -46,5 +46,5 @@ storiesOf('Another Button', module).add(
       text: 'Go to Welcome Story',
       onClick: linkTo('Welcome'),
     },
-  })
-)
+  }),
+);

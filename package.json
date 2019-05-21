@@ -13,7 +13,9 @@
     "e2e": "ng e2e",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "mocks": "cd server && npm run start"
+    "mocks": "cd server && npm run start",
+    "precommit": "npm run lint && npm test",
+    "cypress:open": "cypress open"
   },
   "private": true,
   "dependencies": {
@@ -33,13 +35,17 @@
     "@ionic/angular": "^4.1.0",
     "@ionic/pro": "2.0.4",
     "@ngx-translate/core": "^11.0.1",
+    "@ngx-translate/http-loader": "latest",
+    "classlist.js": "^1.1.20150312",
     "core-js": "^2.5.4",
     "husky": "^2.1.0",
+    "intl": "^1.2.5",
+    "karma-phantomjs-launcher": "^1.0.4",
     "pretty-quick": "^1.10.0",
     "rxjs": "~6.5.1",
     "tslib": "^1.9.0",
-    "zone.js": "~0.8.29",
-    "@ngx-translate/http-loader": "latest"
+    "web-animations-js": "^2.3.1",
+    "zone.js": "~0.8.29"
   },
   "devDependencies": {
     "@angular-devkit/architect": "~0.13.8",
@@ -50,12 +56,20 @@
     "@angular/compiler": "~7.2.2",
     "@angular/compiler-cli": "~7.2.2",
     "@angular/language-service": "~7.2.2",
+    "@babel/core": "^7.4.4",
     "@ionic/angular-toolkit": "~1.5.1",
     "@ionic/lab": "^1.0.24",
+    "@storybook/addon-actions": "^5.0.11",
+    "@storybook/addon-links": "^5.0.11",
+    "@storybook/addon-notes": "^5.0.11",
+    "@storybook/addons": "^5.0.11",
+    "@storybook/angular": "^5.0.11",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~10.14.2",
+    "babel-loader": "^8.0.6",
     "codelyzer": "~4.5.0",
+    "cypress": "^3.3.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
@@ -69,19 +83,12 @@
     "tslint": "~5.16.0",
     "tslint-config-airbnb": "^5.11.1",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "~3.1.6",
-    "@babel/core": "^7.4.4",
-    "babel-loader": "^8.0.6",
-    "@storybook/angular": "^5.0.11",
-    "@storybook/addon-notes": "^5.0.11",
-    "@storybook/addon-actions": "^5.0.11",
-    "@storybook/addon-links": "^5.0.11",
-    "@storybook/addons": "^5.0.11"
+    "typescript": "~3.1.6"
   },
   "description": "An Ionic project",
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged"
+      "pre-commit": "npm run precommit"
     }
   }
 }

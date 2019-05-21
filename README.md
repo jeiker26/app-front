@@ -1,6 +1,9 @@
 # Project Title
 
 Boilerplate para Ionic3
+## Todo
+- Unit test with Phantom
+
 
 ## Project
 
@@ -13,13 +16,20 @@ Boilerplate para Ionic3
 - [ ] [Prettier](https://prettier.io/)
 - [ ] [Jasmine](https://jasmine.github.io/)
 - [ ] [Karma](https://karma-runner.github.io/latest/index.html)
+- [ ] [Phantom]
 - [ ] [Protractor](https://www.protractortest.org/)
 - [ ] [Storybooks](https://storybook.js.org/docs/guides/guide-angular/)
 - [ ] [Angular Material](https://material.angular.io/)
 - [ ] Mocks server: Como proyecto independiente dentro del repo
+- [ ] [Cypress](https://www.cypress.io/)
 
 ### Estructura
 
+### Multilanguage
+
+``
+ng serve --configuration=es
+``
 ---
 
 ## Getting Started
