@@ -18,6 +18,8 @@ Boilerplate para Ionic3
 - [ ] [Angular Material](https://material.angular.io/)
 - [ ] Mocks server: Como proyecto independiente dentro del repo
 
+### Estructura
+
 ---
 
 ## Getting Started
@@ -29,6 +31,7 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 - [ ] [Ionic: v4.12.0](https://ionicframework.com)
+- [ ] [AngularCLI](https://angular.io/guide/quickstart)
 - [ ] [Node: v8.15.1](https://nodejs.org/es/)
 - [ ] Npm: v6.4.1
 
