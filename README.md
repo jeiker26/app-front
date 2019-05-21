@@ -21,6 +21,8 @@ Boilerplate para Ionic3
 - [ ] [Angular Material](https://material.angular.io/)
 - [ ] Mocks server: Como proyecto independiente dentro del repo
 - [ ] [Cypress](https://www.cypress.io/)
+- [ ] [Stylelint](https://stylelint.io/)
+- [ ] [Sass]
 
 ### Estructura
 
