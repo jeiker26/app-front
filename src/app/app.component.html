@@ -3,15 +3,7 @@
     <ion-menu>
       <ion-header>
         <ion-toolbar>
-          <ion-title>{{ 'HOME.TITLE' | translate }}</ion-title>
-          <select #langSelect (change)="translate.use(langSelect.value)">
-            <option
-              *ngFor="let lang of translate.getLangs()"
-              [value]="lang"
-              [selected]="lang === translate.currentLang"
-              >{{ lang }}</option
-            >
-          </select>
+          <ion-title>{{ 'MENU.TITLE' | translate }}</ion-title>
         </ion-toolbar>
       </ion-header>
       <ion-content>
@@ -24,6 +16,26 @@
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
+
+
+          <ion-footer>
+              <ion-select #langSelect [placeholder]="'MENU.SELECT' | translate" (ionChange)="changeLanguage(langSelect.value)">
+                <ion-select-option *ngFor="let lang of translate.getLangs()"
+                                   [value]="lang"
+                                   [selected]="lang === translate.currentLang">
+                  {{ lang }}
+                </ion-select-option>
+              </ion-select>
+            <!--
+              <select #langSelect (change)="translate.use(langSelect.value)">
+                <option
+                        *ngFor="let lang of translate.getLangs()"
+                        [value]="lang"
+                        [selected]="lang === translate.currentLang"
+                >{{ lang }}</option
+                >
+              </select>-->
+          </ion-footer>
         </ion-list>
       </ion-content>
     </ion-menu>
