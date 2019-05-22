@@ -1,25 +1,29 @@
 var faker = require("faker");
 
-var database = { users: [] };
+var database = {
+  news: {
+    page: {
+      items: [],
+      number: 1,
+      size: 30,
+      offset: 0,
+      total: 30,
+      totalPages: 1,
+      numElements: 30
+    }
+  }
+};
 
 for (var i = 1; i <= 30; i++) {
-  database.users.push({
+  database.news.page.items.push({
     id: i,
-    name: faker.name.firstName() + " " + faker.name.lastName(),
-    username: faker.name.firstName(),
-    email: faker.internet.email(),
-    phone: faker.phone.phoneNumber(),
-    address: {
-      street: faker.address.streetName(),
-      city: faker.address.city(),
-      country: faker.address.country(),
-      zipcode: faker.address.zipCode(),
-      geo: {
-        lat: faker.address.latitude(),
-        lng: faker.address.longitude()
-      }
-    }
+    image: faker.image.imageUrl(),
+    title: faker.lorem.words(),
+    description: faker.lorem.text(),
+    uri: faker.image.imageUrl()
   });
 }
 
 console.log(JSON.stringify(database));
+
+
