@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://jsonplaceholder.typicode.com',
+  apiUrl: 'http://www.rtve.es/api',
+  apiUrlNews: '/noticias.json',
 };
