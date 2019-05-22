@@ -6,6 +6,6 @@
   <ion-card-content>
     <div [innerHtml]="newsItem.description">
     </div>
-    <ion-button expand="block" [href]="newsItem.uri" target="_blank">{{ 'NEWS.EXTERNAL_LINK' | translate }}</ion-button>
+    <ion-button expand="block" (click)="openUrl(newsItem.uri)">{{ 'NEWS.EXTERNAL_LINK' | translate }}</ion-button>
   </ion-card-content>
 </ion-card>

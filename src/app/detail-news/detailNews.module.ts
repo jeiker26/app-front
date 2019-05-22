@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { DetailNewsPage } from './detailNews.page';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { DetailNewsPage } from './detailNews.page';
     ]),
     TranslateModule,
   ],
+  providers: [InAppBrowser],
   declarations: [DetailNewsPage],
 })
 export class DetailNewsModule {}

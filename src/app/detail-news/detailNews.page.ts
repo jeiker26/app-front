@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NewsService } from '../../shared/api/news/news.service';
 import { News } from '../../shared/interfaces/news/news.interface';
 import { ActivatedRoute } from '@angular/router';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
   selector: 'app-detail-news',
@@ -13,7 +14,8 @@ export class DetailNewsPage {
   private urlParamsSub;
 
   constructor(private newsService: NewsService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private iab: InAppBrowser) {
     this.urlParamsSub = this.route.params.subscribe(({ id }) => {
       this.newsService.getNew(id).subscribe((res) => {
         this.newsItem = res;
@@ -22,5 +24,9 @@ export class DetailNewsPage {
   }
 
   ngOnInit() {
+  }
+
+  openUrl(link: string) {
+    const browser = this.iab.create(link);
   }
 }
