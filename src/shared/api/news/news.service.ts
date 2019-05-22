@@ -60,7 +60,7 @@ export class NewsService {
       image: item.image,
       title: item.title,
       description: item.summary,
-      uri: item.uri,
+      uri: item.htmlUrl,
     };
   }
 }

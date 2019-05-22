@@ -28,5 +28,6 @@ export class DetailNewsPage {
 
   openUrl(link: string) {
     const browser = this.iab.create(link);
+    browser.show();
   }
 }
