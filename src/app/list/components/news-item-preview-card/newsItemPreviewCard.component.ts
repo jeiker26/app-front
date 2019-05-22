@@ -5,8 +5,8 @@ import { Component, Input } from '@angular/core';
  */
 @Component({
   selector: 'app-news-item-preview-card',
-  templateUrl: 'newsPreviewCard.component.html',
-  styleUrls: ['newsPreviewCard.component.scss'],
+  templateUrl: 'newsItemPreviewCard.component.html',
+  styleUrls: ['newsItemPreviewCard.component.scss'],
 })
 export class NewsItemPreviewCardComponent {
   @Input() title: string;
