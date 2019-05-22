@@ -13,10 +13,10 @@ export class NewsService {
   constructor(private httpClient : HttpClient) {}
 
   getNews() {
-    return this.httpClient.get(`${this.apiURL}${this.apiURLNews}`);
+    return this.httpClient.get<News[]>(`${this.apiURL}${this.apiURLNews}`);
   }
 
   getNew(id: string) {
-    return this.httpClient.get<News>(`${this.apiURL}${this.apiURLNews}/${id}`);
+    return this.httpClient.get<News>(`${this.apiURL}${this.apiURLNews}?id=${id}`);
   }
 }
