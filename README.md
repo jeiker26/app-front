@@ -16,7 +16,7 @@ Boilerplate para Ionic4 + Angular7 + Sass + Storybooks + Cypress.
 - [ ] [Protractor](https://www.protractortest.org/)
 - [ ] [Storybooks](https://storybook.js.org/docs/guides/guide-angular/)
 - [ ] [Angular Material](https://material.angular.io/)
-- [ ] Mocks server: As an independent project with [Faker](https://github.com/marak/Faker.js/)
+- [ ] Mocks server: As an independent project with [Faker](https://github.com/marak/Faker.js/) and [json-server](https://github.com/typicode/json-server)
 - [ ] [Cypress](https://www.cypress.io/)
 - [ ] [Stylelint](https://stylelint.io/)
 - [ ] [Sass](https://sass-lang.com/)

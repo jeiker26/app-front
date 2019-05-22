@@ -1,0 +1,11 @@
+<ion-card class="news-item-preview-card" *ngIf="newsItem">
+  <ion-img class="news-item-preview-card__img" [src]="newsItem.image"></ion-img>
+  <ion-card-header>
+    <ion-card-title>{{ newsItem.title }}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <div [innerHtml]="newsItem.description">
+    </div>
+    <ion-button expand="block" (click)="openUrl(newsItem.uri)">{{ 'NEWS.EXTERNAL_LINK' | translate }}</ion-button>
+  </ion-card-content>
+</ion-card>

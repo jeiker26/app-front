@@ -9,6 +9,9 @@
   },
   "LIST": {
     "TITLE": "LIST"
+  },
+  "NEWS": {
+    "EXTERNAL_LINK": "View in browser",
+    "DETAIL": "View detail"
   }
-
 }
