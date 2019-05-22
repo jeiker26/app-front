@@ -1,6 +1,14 @@
 {
   "HOME": {
-    "TITLE": "Hello Angular with ngx-translate!",
+    "TITLE": "HOME",
+    "DESCRIPTION": "Hello Ionic + Angular"
+  },
+  "MENU": {
+    "TITLE": "MENU",
     "SELECT": "Change language"
+  },
+  "LIST": {
+    "TITLE": "LIST"
   }
+
 }
