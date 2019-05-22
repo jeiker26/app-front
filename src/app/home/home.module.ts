@@ -6,12 +6,14 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { HomePage } from './home.page';
+import { GuidePreviewCardModule } from '../../shared/components/guide-preview-card/guidePreviewCard.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    GuidePreviewCardModule,
     RouterModule.forChild([
       {
         path: '',

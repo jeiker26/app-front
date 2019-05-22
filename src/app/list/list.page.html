@@ -11,8 +11,17 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let newsItem of news">
-      <app-news-item-preview-card [title]="newsItem.title" [imageUrl]="newsItem.uri" [description]="newsItem.description"></app-news-item-preview-card>
+    <ion-item *ngFor="let item of items">
+      <ion-icon [name]="item.icon" slot="start"></ion-icon>
+      {{item.title}}
+      <div class="item-note" slot="end">
+        {{item.note}}
+      </div>
     </ion-item>
   </ion-list>
+  <!--
+    <div *ngIf="selectedItem" padding>
+      You navigated here from <b>{{selectedItem.title }}</b>
+    </div>
+  -->
 </ion-content>
