@@ -18,7 +18,7 @@ export class NewsService {
     return this.httpClient.get(`${this.apiURL}${this.apiURLNews}`)
       .pipe(
         map((response) => {
-          if (environment.production) {
+          if (!environment.production) {
             return response;
           }
 
@@ -31,7 +31,7 @@ export class NewsService {
   }
 
   getNew(id: string): Observable<News> {
-    if (environment.production) {
+    if (!environment.production) {
       return this.httpClient.get(`${this.apiURL}${this.apiURLNews}?id=${id}`)
         .pipe(
           map((response) => {
