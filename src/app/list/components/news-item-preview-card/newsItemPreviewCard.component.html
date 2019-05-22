@@ -4,8 +4,7 @@
     <ion-card-title>{{ title }}</ion-card-title>
   </ion-card-header>
   <ion-card-content>
-    <div class="short-description">
-      {{ description }}
+    <div class="short-description" [innerHtml]="description">
     </div>
     <ion-button expand="block">{{ 'NEWS.DETAIL' | translate }}</ion-button>
   </ion-card-content>

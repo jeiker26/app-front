@@ -4,8 +4,7 @@
     <ion-card-title>{{ newsItem.title }}</ion-card-title>
   </ion-card-header>
   <ion-card-content>
-    <div>
-      {{ newsItem.description }}
+    <div [innerHtml]="newsItem.description">
     </div>
     <ion-button expand="block" [href]="newsItem.uri" target="_blank">{{ 'NEWS.EXTERNAL_LINK' | translate }}</ion-button>
   </ion-card-content>

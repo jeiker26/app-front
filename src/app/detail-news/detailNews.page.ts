@@ -16,8 +16,7 @@ export class DetailNewsPage {
               private route: ActivatedRoute) {
     this.urlParamsSub = this.route.params.subscribe(({ id }) => {
       this.newsService.getNew(id).subscribe((res) => {
-        console.log(res);
-        this.newsItem = res[0];
+        this.newsItem = res;
       });
     });
   }
