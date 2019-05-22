@@ -1,6 +1,17 @@
 {
   "HOME": {
-    "TITLE": "Hola Angular con ngx-translate!",
+    "TITLE": "INICIO",
+    "DESCRIPTION": "Hola Ionic + Angular!"
+  },
+  "MENU": {
+    "TITLE": "MENU (ES)",
     "SELECT": "Elige idioma"
+  },
+  "LIST": {
+    "TITLE": "LISTA"
+  },
+  "NEWS": {
+    "EXTERNAL_LINK": "Ver en el navegador",
+    "DETAIL": "Ver detalle"
   }
 }

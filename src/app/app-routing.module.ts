@@ -9,11 +9,15 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: './home/home.module#HomePageModule',
+    loadChildren: './modules/home/home.module#HomePageModule',
   },
   {
     path: 'list',
-    loadChildren: './list/list.module#ListPageModule',
+    loadChildren: './modules/list/list.module#ListPageModule',
+  },
+  {
+    path: 'detail/:id',
+    loadChildren: './modules/detail-news/detailNews.module#DetailNewsModule',
   },
 ];
 

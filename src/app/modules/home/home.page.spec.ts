@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import { HomePage } from './home.page';
-import { HttpLoaderFactory } from '../app.module';
+import { HttpLoaderFactory } from '../../app.module';
 
 describe('HomePage', () => {
   let component: HomePage;
