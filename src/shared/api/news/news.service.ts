@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
-import { New } from '../../interfaces/new/new.interface';
+import { News } from '../../interfaces/news/news.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -17,6 +17,6 @@ export class NewsService {
   }
 
   getNew(id: string) {
-    return this.httpClient.get<New>(`${this.apiURL}${this.apiURLNews}/${id}`);
+    return this.httpClient.get<News>(`${this.apiURL}${this.apiURLNews}/${id}`);
   }
 }
