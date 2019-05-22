@@ -8,7 +8,7 @@ import { News } from '../../../shared/interfaces/news/news.interface';
   styleUrls: ['list.page.scss'],
 })
 export class ListPage implements OnInit {
-  private news: News[] = [];
+  news: News[] = [];
   constructor(private newsService: NewsService) {
     this.newsService.getNews().subscribe((res) => {
       this.news = res;

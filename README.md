@@ -111,8 +111,19 @@ npm run cypress:open
 
 ### Deployment
 
+
 ```js
-npm run build
+npm run build:pro
+
+-- or  dev(mocks) --
+
+npm run build:pro
+```
+
+And serve with for example `serve`:
+```js
+npm i -g serve
+serve www/
 ```
 
 ---

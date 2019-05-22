@@ -10,7 +10,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
   styleUrls: ['detailNews.page.scss'],
 })
 export class DetailNewsPage {
-  private newsItem: News;
+  newsItem: News;
   private urlParamsSub;
 
   constructor(private newsService: NewsService,
