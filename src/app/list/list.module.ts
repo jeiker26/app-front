@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
+import { NewPreviewCardModule } from './components/new-preview-card/newPreviewCard.module';
 
 import { ListPage } from './list.page';
 
 @NgModule({
   imports: [
+    NewPreviewCardModule,
     CommonModule,
     FormsModule,
     IonicModule,
