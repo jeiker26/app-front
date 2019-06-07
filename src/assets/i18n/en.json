@@ -13,5 +13,8 @@
   "NEWS": {
     "EXTERNAL_LINK": "View in browser",
     "DETAIL": "View detail"
+  },
+  "CREATION_TOOL": {
+    "TITLE": "CREATION TOOL"
   }
 }
