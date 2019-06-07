@@ -15,6 +15,21 @@
     "DETAIL": "View detail"
   },
   "CREATION_TOOL": {
-    "TITLE": "CREATION TOOL"
+    "TITLE": "CREATION TOOL",
+    "FORM": {
+      "NAME": "Name",
+      "DESCRIPTION": "Description",
+      "ADDRESS": "Address",
+      "PRICE": "Price",
+      "STATUS": "Status",
+      "SUBMIT_BTN": "Save"
+    }
+  },
+  "STATUS": {
+    "DRAFT": "Draft",
+    "PUBLISH": "Publish"
+  },
+  "FORM_ERROR": {
+    "MESSAGE_REQUIRED": "Item required"
   }
 }

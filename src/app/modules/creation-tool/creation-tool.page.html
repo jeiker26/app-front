@@ -4,11 +4,36 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      {{ 'HOME.TITLE' | translate }}
+      {{ 'CREATION_TOOL.TITLE' | translate }}
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <p>{{ 'HOME.DESCRIPTION' | translate }}</p>
+  <form [formGroup]="creationToolForm" (ngSubmit)="onSubmit()" novalidate>
+    <ion-item>
+      <ion-label>{{ 'CREATION_TOOL.FORM.NAME' | translate }}</ion-label>
+      <ion-input formControlName="name"></ion-input>
+      <app-error-input-form [displayErrorsSubmit]="displayErrorsSubmit" [form]="creationToolForm"
+                            [item]="'name'"></app-error-input-form>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>{{ 'CREATION_TOOL.FORM.DESCRIPTION' | translate }}</ion-label>
+      <ion-textarea formControlName="description"></ion-textarea>
+      <app-error-input-form [displayErrorsSubmit]="displayErrorsSubmit" [form]="creationToolForm"
+                            [item]="'description'"></app-error-input-form>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>{{ 'CREATION_TOOL.FORM.PRICE' | translate }}</ion-label>
+      <ion-input formControlName="price" type="number"></ion-input>
+      <app-error-input-form [displayErrorsSubmit]="displayErrorsSubmit" [form]="creationToolForm"
+                            [item]="'price'"></app-error-input-form>
+    </ion-item>
+
+    <ion-button expand="block" type="submit">{{ 'CREATION_TOOL.FORM.SUBMIT_BTN' | translate }}</ion-button>
+  </form>
+
+
 </ion-content>

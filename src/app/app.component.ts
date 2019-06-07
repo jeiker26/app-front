@@ -24,7 +24,7 @@ export class AppComponent {
     },
     {
       title: 'Creation tool',
-      url: '/creation-tool',
+      url: '/creation-tool/new',
       icon: 'add',
     }];
 
@@ -66,7 +66,7 @@ export class AppComponent {
         },
         {
           title: res['CREATION_TOOL.TITLE'],
-          url: '/creation-tool',
+          url: '/creation-tool/new',
           icon: 'add',
         }];
     });

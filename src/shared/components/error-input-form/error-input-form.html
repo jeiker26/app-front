@@ -1,0 +1,10 @@
+<p *ngIf="(showError || currentItem.dirty) && !currentItem.valid">
+  <span class="error" *ngIf="currentItem.hasError('required')">{{ 'FORM_ERROR.MESSAGE_REQUIRED' | translate }}</span>
+  <span class="error" *ngIf="currentItem.hasError('timeFormat')">{{ 'FORM_ERROR.message1' | translate }}</span>
+  <span class="error" *ngIf="currentItem.hasError('email')">{{ 'FORM_ERROR.message2' | translate }}</span>
+  <span class="error" *ngIf="currentItem.hasError('dateFormat')">{{ 'FORM_ERROR.message3' | translate }}</span>
+  <span class="error" *ngIf="currentItem.hasError('yearFormat')">{{ 'FORM_ERROR.message4' | translate }}</span>
+  <span class="error" *ngIf="currentItem.hasError('minLengthCustom')">{{ 'FORM_ERROR.message5' | translate }}</span>
+  <span class="error" *ngIf="currentItem.hasError('maxLength')">{{ 'FORM_ERROR.message6' | translate }}</span>
+  <span class="error" *ngIf="currentItem.hasError('checkCreditCard')">{{ 'FORM_ERROR.message7' | translate }}</span>
+</p>
