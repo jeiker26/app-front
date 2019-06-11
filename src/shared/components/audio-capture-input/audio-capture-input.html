@@ -1,0 +1,20 @@
+<div>
+    <app-audio-track *ngIf="currentState === STATES_AUDIO_RECORD.STOP_RECORD && audio" [audio]="audio"></app-audio-track>
+    <button *ngIf="currentState === STATES_AUDIO_RECORD.INITIAL_STATE" (click)="startRecord()">
+        <ion-button>
+            <ion-icon name="mic"></ion-icon>
+        </ion-button>
+    </button>
+    <button *ngIf="currentState === STATES_AUDIO_RECORD.START_RECORD" (click)="stopRecord()">
+        <ion-spinner name="dots"></ion-spinner>
+        <ion-button>
+            <ion-icon name="hand"></ion-icon>
+        </ion-button>
+    </button>
+
+    <button *ngIf="currentState === STATES_AUDIO_RECORD.STOP_RECORD" (click)="deleteAudio()">
+        <ion-button>
+            <ion-icon name="trash"></ion-icon>
+        </ion-button>
+    </button>
+</div>
