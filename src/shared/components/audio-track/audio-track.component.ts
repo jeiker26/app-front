@@ -29,7 +29,6 @@ export class AudioTrackComponent implements OnInit {
     setTimeout(() => {
       this.audio.pause();
       this.totalDuration = this.audio.getDuration();
-      console.log(this.totalDuration);
     },         500);
     /** WARNING END*/
 
@@ -42,8 +41,6 @@ export class AudioTrackComponent implements OnInit {
     *  Media.MEDIA_STOPPED = 4;
     * */
     this.audio.onStatusUpdate.subscribe((status) => {
-      console.log(`> onStatusUpdate= ${status}`);
-
       // When the audio finishes playing
       if (this.currentState === this.STATES_AUDIO_TRACK.PLAY_AUDIO && status === 4) {
         this.finishedAudio();
