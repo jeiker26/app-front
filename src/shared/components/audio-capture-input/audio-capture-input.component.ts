@@ -25,6 +25,10 @@ export class AudioCaptureInputComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.initFile();
+  }
+
+  initFile() {
     this.audio = this.media.create(this.fileName);
   }
 
@@ -43,8 +47,7 @@ export class AudioCaptureInputComponent implements OnInit {
 
   deleteAudio() {
     this.currentState = this.STATES_AUDIO_RECORD.INITIAL_STATE;
-
+    this.initFile(); // The file is overwritten so it is not necessary to delete it
     this.audioDeleted.emit();
   }
-
 }

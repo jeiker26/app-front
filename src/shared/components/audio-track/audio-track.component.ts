@@ -66,8 +66,7 @@ export class AudioTrackComponent implements OnInit {
     this.currentState = this.STATES_AUDIO_TRACK.PAUSE_AUDIO;
   }
 
-  finishedAudio() { // LLEGA PERO NO ACTUALIZA LA UI
-    console.log('Fisished audio');
+  finishedAudio() {
     this.clearCurrentPosition();
     this.currentState = this.STATES_AUDIO_TRACK.PAUSE_AUDIO;
   }
