@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Media, MediaObject } from '@ionic-native/media/ngx';
+import { MediaObject } from '@ionic-native/media/ngx';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -20,27 +20,21 @@ export class AudioTrackComponent implements OnInit {
   totalDuration = 0;
   positionInterval;
 
-  constructor(public translate: TranslateService,
-              private media: Media) {
+  constructor(public translate: TranslateService) {
   }
 
   ngOnInit() {
-    // Ñapa porque si no se inicia no reconoce la duracion
+    /** WARNING START: If it does not start and for reproduction the total duration is "-1" */
     this.audio.play();
     setTimeout(() => {
       this.audio.pause();
       this.totalDuration = this.audio.getDuration();
       console.log(this.totalDuration);
     },         500);
+    /** WARNING END*/
 
-    /*
-    * Status: (record or play)
-    * 1 - ¿?
-    * 2 - start
-    * 4 - finish
-    *
-    *
-    *  Docu:
+    /**
+    * Status:
     *  Media.MEDIA_NONE = 0;
     *  Media.MEDIA_STARTING = 1;
     *  Media.MEDIA_RUNNING = 2;
@@ -49,14 +43,10 @@ export class AudioTrackComponent implements OnInit {
     * */
     this.audio.onStatusUpdate.subscribe((status) => {
       console.log(`> onStatusUpdate= ${status}`);
-    });
 
-    this.audio.onSuccess.subscribe(() => {
-      if (this.currentState === this.STATES_AUDIO_TRACK.PLAY_AUDIO) {
-        // When audio play and finished
+      // When the audio finishes playing
+      if (this.currentState === this.STATES_AUDIO_TRACK.PLAY_AUDIO && status === 4) {
         this.finishedAudio();
-      } else {
-        console.log('> onSuccess');
       }
     });
 
@@ -79,10 +69,10 @@ export class AudioTrackComponent implements OnInit {
     this.currentState = this.STATES_AUDIO_TRACK.PAUSE_AUDIO;
   }
 
-  finishedAudio() { // NOT WORKING, LLEGA PERO NO ACTUALIZA LA UI
+  finishedAudio() { // LLEGA PERO NO ACTUALIZA LA UI
     console.log('Fisished audio');
     this.clearCurrentPosition();
-    this.currentState = this.STATES_AUDIO_TRACK.PAUSE_AUDIO; // Return PAUSE AUDIO for init play again
+    this.currentState = this.STATES_AUDIO_TRACK.PAUSE_AUDIO;
   }
 
   getCurrentPosition() {

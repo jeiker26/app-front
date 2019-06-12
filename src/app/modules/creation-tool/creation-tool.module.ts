@@ -7,7 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { CreationToolPage } from './creation-tool.page';
 import { ErrorInputFormModule } from '../../../shared/components/error-input-form/error-input-form.module';
-import { AudioCaptureInputModule } from '../../../shared/components/audio-capture-input/audio-capture-input.module';
+import { AudioCaptureAndPlayerModule } from '../../../shared/ui-components/audio-capture-and-player/audio-capture-and-player.module';
 
 @NgModule({
   imports: [
@@ -17,7 +17,7 @@ import { AudioCaptureInputModule } from '../../../shared/components/audio-captur
     ReactiveFormsModule,
     ErrorInputFormModule,
     TranslateModule,
-    AudioCaptureInputModule,
+    AudioCaptureAndPlayerModule,
     RouterModule.forChild([
       {
         path: '',

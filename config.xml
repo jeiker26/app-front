@@ -96,5 +96,5 @@
     <edit-config file="*-Info.plist" mode="merge" target="NSMicrophoneUsageDescription">
         <string>We would like to access your microphone for recording</string>
     </edit-config>
-    <allow-navigation href="http://10.11.221.76:8100" sessionid="01e5ff52" />
+    <allow-navigation href="http://10.11.221.76:8100" sessionid="b1b6101a" />
 </widget>

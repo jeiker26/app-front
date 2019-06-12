@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Media, MediaObject } from '@ionic-native/media/ngx';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -8,6 +8,8 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./audio-capture-input.scss'],
 })
 export class AudioCaptureInputComponent implements OnInit {
+  @Output() audioRecordFinished = new EventEmitter();
+  @Output() audioDeleted = new EventEmitter();
   STATES_AUDIO_RECORD = {
     INITIAL_STATE: 'INITIAL_STATE',
     START_RECORD: 'START_RECORD',
@@ -27,20 +29,22 @@ export class AudioCaptureInputComponent implements OnInit {
   }
 
   startRecord() {
-    console.log('Start');
     this.audio.startRecord();
     this.currentState = this.STATES_AUDIO_RECORD.START_RECORD;
   }
 
   stopRecord() {
-    console.log('Stop');
     this.audio.stopRecord();
     this.audio.release();
     this.currentState = this.STATES_AUDIO_RECORD.STOP_RECORD;
+
+    this.audioRecordFinished.emit({ audio: this.audio });
   }
 
   deleteAudio() {
     this.currentState = this.STATES_AUDIO_RECORD.INITIAL_STATE;
+
+    this.audioDeleted.emit();
   }
 
 }

@@ -1,0 +1,6 @@
+<app-audio-capture-input
+        (audioRecordFinished)="callbackAudioRecord($event)"
+        (audioDeleted)="callbackAudioDelete($event)">
+</app-audio-capture-input>
+
+<app-audio-track *ngIf="audio" [audio]="audio"></app-audio-track>
