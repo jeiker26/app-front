@@ -27,11 +27,13 @@ export class AudioCaptureInputComponent implements OnInit {
   }
 
   startRecord() {
+    console.log('Start');
     this.audio.startRecord();
     this.currentState = this.STATES_AUDIO_RECORD.START_RECORD;
   }
 
   stopRecord() {
+    console.log('Stop');
     this.audio.stopRecord();
     this.audio.release();
     this.currentState = this.STATES_AUDIO_RECORD.STOP_RECORD;
