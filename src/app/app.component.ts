@@ -11,16 +11,22 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: 'app.component.html',
 })
 export class AppComponent {
-  public appPages = [{
-    title: 'Home',
-    url: '/home',
-    icon: 'home',
-  },
-  {
-    title: 'List',
-    url: '/list',
-    icon: 'list',
-  }];
+  public appPages = [
+    {
+      title: 'Home',
+      url: '/home',
+      icon: 'home',
+    },
+    {
+      title: 'List',
+      url: '/list',
+      icon: 'list',
+    },
+    {
+      title: 'Creation tool',
+      url: '/creation-tool/new',
+      icon: 'add',
+    }];
 
   constructor(
     private platform: Platform,
@@ -46,7 +52,7 @@ export class AppComponent {
   }
 
   translateMenu() {
-    this.translate.get(['LIST.TITLE', 'HOME.TITLE']).subscribe((res: string) => {
+    this.translate.get(['LIST.TITLE', 'HOME.TITLE', 'CREATION_TOOL.TITLE']).subscribe((res: string) => {
       this.appPages = [
         {
           title: res['HOME.TITLE'],
@@ -57,6 +63,11 @@ export class AppComponent {
           title: res['LIST.TITLE'],
           url: '/list',
           icon: 'list',
+        },
+        {
+          title: res['CREATION_TOOL.TITLE'],
+          url: '/creation-tool/new',
+          icon: 'add',
         }];
     });
   }

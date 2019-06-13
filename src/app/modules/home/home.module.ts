@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { ImageCaptureInputModule } from '../../../shared/components/image-capture-input/image-capture-input.module';
 
 import { HomePage } from './home.page';
 
@@ -19,6 +20,7 @@ import { HomePage } from './home.page';
       },
     ]),
     TranslateModule,
+    ImageCaptureInputModule,
   ],
   declarations: [HomePage],
 })

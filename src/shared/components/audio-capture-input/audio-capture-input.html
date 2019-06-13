@@ -1,0 +1,18 @@
+<div class="audio-capture">
+    <ion-button
+            *ngIf="currentState === STATES_AUDIO_RECORD.INITIAL_STATE || currentState === STATES_AUDIO_RECORD.START_RECORD"
+            [size]="currentState === STATES_AUDIO_RECORD.START_RECORD ? 'large' : 'default'"
+            (touchstart)="startRecord()"
+            (touchend)="stopRecord()"
+            shape="round"
+            color="danger">
+        <ion-icon name="mic" *ngIf="currentState === STATES_AUDIO_RECORD.INITIAL_STATE"></ion-icon>
+        <ion-spinner name="dots" *ngIf="currentState === STATES_AUDIO_RECORD.START_RECORD"></ion-spinner>
+    </ion-button>
+
+    <ion-button
+            *ngIf="currentState === STATES_AUDIO_RECORD.STOP_RECORD"
+            (click)="deleteAudio()">
+        <ion-icon name="trash"></ion-icon>
+    </ion-button>
+</div>

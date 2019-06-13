@@ -1,0 +1,9 @@
+/** Audio capture and player */
+.audio-capture-and-player {
+  display: flex;
+
+  &__audio-track {
+    display: block;
+    width: 85%;
+  }
+}

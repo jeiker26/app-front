@@ -1,8 +1,8 @@
 {
-  "name": "app-front",
-  "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "name": "com.turisteapp.baseApp",
+  "version": "0.0.2",
+  "author": "Jesus Javega",
+  "homepage": "",
   "scripts": {
     "ng": "ng",
     "dev": "ionic serve -l",
@@ -31,14 +31,23 @@
     "@angular/platform-browser-dynamic": "^7.2.2",
     "@angular/router": "^7.2.2",
     "@ionic-native/core": "^5.0.0",
+    "@ionic-native/file": "^5.7.0",
+    "@ionic-native/in-app-browser": "^5.0.0",
+    "@ionic-native/media": "^5.7.0",
+    "@ionic-native/media-capture": "^5.7.0",
     "@ionic-native/splash-screen": "^5.0.0",
     "@ionic-native/status-bar": "^5.0.0",
-    "@ionic-native/in-app-browser": "^5.0.0",
     "@ionic/angular": "^4.1.0",
     "@ionic/pro": "2.0.4",
+    "@ionic/storage": "^2.2.0",
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "latest",
     "classlist.js": "^1.1.20150312",
+    "cordova-android": "8.0.0",
+    "cordova-plugin-file": "6.0.1",
+    "cordova-plugin-media": "5.0.2",
+    "cordova-plugin-media-capture": "3.0.2",
+    "cordova-sqlite-storage": "3.2.0",
     "core-js": "^2.5.4",
     "husky": "^2.1.0",
     "intl": "^1.2.5",
@@ -71,6 +80,12 @@
     "@types/node": "~10.14.2",
     "babel-loader": "^8.0.6",
     "codelyzer": "~4.5.0",
+    "cordova-plugin-device": "^2.0.2",
+    "cordova-plugin-ionic-keyboard": "^2.1.3",
+    "cordova-plugin-ionic-webview": "^4.0.1",
+    "cordova-plugin-splashscreen": "^5.0.2",
+    "cordova-plugin-statusbar": "^2.4.2",
+    "cordova-plugin-whitelist": "^1.3.3",
     "cypress": "^3.3.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
@@ -102,7 +117,22 @@
   },
   "cordova": {
     "plugins": {
-      "cordova-plugin-inappbrowser": {}
-    }
+      "cordova-plugin-inappbrowser": {},
+      "cordova-plugin-media-capture": {},
+      "cordova-plugin-media": {},
+      "cordova-plugin-file": {},
+      "cordova-sqlite-storage": {},
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {
+        "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
+      },
+      "cordova-plugin-ionic-keyboard": {}
+    },
+    "platforms": [
+      "android"
+    ]
   }
 }

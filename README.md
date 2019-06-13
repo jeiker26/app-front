@@ -125,6 +125,19 @@ And serve with for example `serve`:
 npm i -g serve
 serve www/
 ```
+## Deploy in Android Emulator o phone connected
+### Requisitos
+- [Android Studio](https://developer.android.com/studio/?gclid=CjwKCAjwue3nBRACEiwAkpZhmVKxyIRjZ8cZSyr0OlCuMuBd_tIezcSIoEJJichV6pG802yS6tBqNRoCLBIQAvD_BwE)
+- [JAVA JDK or JRE](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
+- [Gradle](https://gradle.org/install/)
+
+
+Run in android device:
+```js
+ionic cordova run android -l
+```
+
+Debug app with google tools, copy + paste in your browser:  `chrome://inspect/#devices`
 
 ---
 

@@ -1,0 +1,20 @@
+<div class="audio-track">
+    <ion-button
+            *ngIf="currentState === STATES_AUDIO_TRACK.INITIAL_STATE || currentState === STATES_AUDIO_TRACK.PAUSE_AUDIO"
+            (click)="playAudio()"
+            shape="round">
+        <ion-icon name="play"></ion-icon>
+    </ion-button>
+
+    <ion-button
+            *ngIf="currentState === STATES_AUDIO_TRACK.PLAY_AUDIO"
+            (click)="pauseAudio()"
+            shape="round">
+        <ion-icon name="pause"></ion-icon>
+    </ion-button>
+
+    <div class="audio-track__progress-bar">
+        <ion-progress-bar [value]="currentPosition/totalDuration"></ion-progress-bar>
+        <small class="total-time">{{ (totalDuration - currentPosition) / 60 | number: '1.0-0' | minTwoDigits }}:{{ (totalDuration - currentPosition) % 60 | number: '1.0-0' | minTwoDigits }}</small>
+    </div>
+</div>

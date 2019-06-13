@@ -13,5 +13,20 @@
   "NEWS": {
     "EXTERNAL_LINK": "Ver en el navegador",
     "DETAIL": "Ver detalle"
+  },
+  "CREATION_TOOL": {
+    "TITLE": "HERRAMIENTA DE CREACIÓN",
+    "FORM": {
+      "NAME": "Nombre",
+      "DESCRIPTION": "Descripción",
+      "ADDRESS": "Direacción",
+      "PRICE": "Precio",
+      "STATUS": "Estado",
+      "SUBMIT_BTN": "Guardar"
+    }
+  },
+  "STATUS": {
+    "DRAFT": "Borrador",
+    "PUBLISH": "Publicado"
   }
 }

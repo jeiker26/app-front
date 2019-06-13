@@ -1,0 +1,10 @@
+<div class="audio-capture-and-player">
+    <app-audio-track
+            class="audio-capture-and-player__audio-track"
+            *ngIf="audio" [audio]="audio"></app-audio-track>
+
+    <app-audio-capture-input
+            (audioRecordFinished)="callbackAudioRecord($event)"
+            (audioDeleted)="callbackAudioDelete($event)">
+    </app-audio-capture-input>
+</div>

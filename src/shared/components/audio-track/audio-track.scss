@@ -1,0 +1,17 @@
+/* Audio track scss */
+.audio-track {
+  align-items: center;
+  display: flex;
+
+  &__progress-bar {
+    display: flex;
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    .total-time {
+      position: absolute;
+      margin-top: 5px;
+    }
+  }
+}
